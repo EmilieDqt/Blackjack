@@ -21,7 +21,7 @@ class PlaygroundController extends AbstractController {
     public function playground(ManagerRegistry $doctrine, Request $request, GameManager $gameManager, SplitManager $splitManager, BetManager $betManager) {
         
                     //declare requiered variables
-        $session = $request->getSession();
+        $session = $request->getSession(); 
         $action= "";
         $roundOver = false;
         $bet = $request->request->all('bet');
