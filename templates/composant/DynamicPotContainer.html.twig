@@ -1,0 +1,16 @@
+<div class="potContainer">
+    <div class="playerRepresentation">
+        <p class="playerName">{{playerName}}</p>
+        <p class="playerMoney"> {{playerMoney}}</p>
+    </div>
+    <div class="stackInformation">
+        <p id="pot">mise : {{pot}}</p>
+        {% if splittedHand == true %}
+            <p>mise Split : {{splitPot}}</p>
+        {% endif %}
+        
+        {% if insurance != 0 %}
+            <p id="insurance">assurance : {{insurance}}</p>
+        {% endif %}
+    </div>
+</div>

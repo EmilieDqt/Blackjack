@@ -1,0 +1,52 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="style/playground.css" rel="stylesheet" />
+{% endblock %}
+{% block body %}
+    <div class="playground">
+                                        {#Bet form#}
+        {% if form != null %}
+            {% include 'composant/decorativeBlackjack.html.twig' %}
+            {% include 'composant/betForm.html.twig' %}
+            {% include 'composant/decorativePotContainer.html.twig' %}
+    </div>
+        {% endif %}
+
+        {% if form == null and gameOver == false %}
+                                        {# Bank's representation #}
+        {% include 'composant/bankRepresentation.html.twig' %}
+
+        {% include 'composant/DynamicPotContainer.html.twig'%}
+        
+                                            {# middlespace#}
+        <div class="middle_area">
+            {% include 'composant/scoreContainer.html.twig' %}
+
+                                            {# Message end round #}
+            {% if roundOver == true %}
+                {% include 'composant/endRoundMessageBox.html.twig' %}
+            {% endif %}
+
+            {% if paymentIsValid == false %}
+                <p class="endRoundMessage">Vous ne pouvez plus miser</p>
+            {% endif %}
+        </div>
+                                            {#representation of player#}
+        <div class="player">
+            {% include 'composant/playerActionBtn.html.twig' %}
+                                             {#player's cards#}
+            <div class="handsWrapper" >
+                {% include 'composant/playersMainHand.html.twig' %}
+                {% include 'composant/playersSecondHand.html.twig' %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if gameOver == true %}
+            {% include 'composant/decorativeBlackjack.html.twig' %}
+            {% include 'composant/gameOverMessageBox.html.twig' %}
+        {% endif %}
+    </div>
+    
+{% endblock %}

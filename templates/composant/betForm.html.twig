@@ -1,0 +1,17 @@
+<div class="betFormContainer">
+    {{ form_start(form, {'attr': {
+            'method': 'DELETE',
+            'action':'playground',
+            'class':'betForm' 
+    }}) }}
+        <div class="formRow">
+            {{ form_label(form.bet) }} {{ form_widget(form.bet) }}
+        </div>
+        <div class="formRow">
+            {{ form_widget(form.otherBet) }}
+        </div>
+        {% if message != null %}
+            <p>{{message}}</p>
+        {% endif %}
+    {{ form_end(form) }}
+</div>

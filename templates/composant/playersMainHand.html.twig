@@ -1,0 +1,16 @@
+                <div id="playerCards" class="cardContainer">
+                    <img src="{{playerCards.0.path}}" class="card playCard" alt="{{playerCards.0.name}}" />
+                        {%for card in playerCards%}
+                            {% if endPlayersMove == false %}
+                                <a href="playground?action=card">
+                            {% endif %}
+                    
+                            {% if card != playerCards.0 %}
+                                <img src="{{card.Path}}" class="card playCard" alt="{{card.Name}}" />
+                            {% endif %}
+                    
+                            {% if endPlayersMove == false %}
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                </div>

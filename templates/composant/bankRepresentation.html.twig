@@ -1,0 +1,9 @@
+<div class="bank">
+    <p class="playerName">Banque</p>
+                                        {# Bank's Cards#}
+    <div class="cardContainer">
+        {% for card in bankCards %}
+            <img src="{{card.Path}}" class="card playCard" alt="{{card.Name}}" />
+        {% endfor %}
+    </div>
+</div>

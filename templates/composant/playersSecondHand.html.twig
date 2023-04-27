@@ -1,0 +1,14 @@
+{% if splittedHand == true %}
+                    <div class="CardContainer splitCard">
+                        {% for card in secondHand %}
+                            {% if endSplit == false %}
+                                <a href="playground?action=splitCard" >
+                                
+                            {% endif %} 
+                            <img src="{{card.path}}" class="card playCard" alt="card.name">
+                            {% if endSplit == false %}
+                                </a>
+                            {% endif %}                          
+                        {% endfor %}
+                    </div>
+{% endif %}

@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig'%}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="style/nameForm.css" rel="stylesheet" />
+{% endblock %}
+{% block body %}
+    
+
+    <div class="formBody">
+        {% include 'composant/decorativeBlackjack.html.twig' %}
+        {{ form_start(form,  {'attr': {
+            'action':'playground',
+            'class':'nameForm' 
+            }})
+        }}
+        <div class='nameFormRow'>
+            {{ form_label(form.nom,) }}
+            {{ form_widget(form.nom, {'attr': {'class':'nameFormInput'}}) }}
+        </div>
+            <button type="submit" class="btn" >Valider</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

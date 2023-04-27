@@ -1,0 +1,50 @@
+<div class="interact_player">
+    {% if endPlayersMove == true and endBanksMove == false %}
+        <p>
+            <a class="action_player" href="playground?action=next">
+                Suivant
+            </a>
+        </p>
+    {% endif %}
+
+    {% if endPlayersMove == false %} 
+        <p>
+            <a class="action_player" href="playground?action=card">
+                Carte 
+            </a>
+        </p>
+    {% endif %}
+            
+            
+    {% if endPlayersMove  == false %}
+        <p>
+            <a class="action_player"  href="playground?action=done">
+                ça suffit
+            </a>
+        </p>
+    {% endif %}
+            
+    {% if enableDouble == true and enableBet == true %}
+        <p>
+            <a class="action_player"  href="playground?action=double">
+                Double
+            </a>
+        </p>
+    {% endif %}
+
+    {% if splittable == true and enableBet == true %}
+        <p class="action_player">
+            <a href="playground?action=split">
+                Split
+            </a>
+        </p>
+    {% endif %}
+
+    {% if insurable == true and enableBet == true %}
+        <p>
+            <a class="action_player" href="playground?action=insurance">
+                Assurance
+            </a>
+        </p>
+    {% endif %}
+</div>
